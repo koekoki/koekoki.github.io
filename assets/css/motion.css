@@ -1,0 +1,225 @@
+/* ==========================================================================
+   Motion — floating decorative elements, hero photo interaction, entrance
+   variants and card hover refinements. Everything here is transform/opacity
+   only (GPU-friendly), and every rule in this file is neutralised under
+   prefers-reduced-motion at the bottom.
+   ========================================================================== */
+
+/* ---- Reveal variants (extends the base [data-reveal] rule in base.css) ---- */
+[data-reveal="title"] {
+  transform: translateY(22px);
+  transition-duration: 320ms;
+}
+
+[data-reveal="lead"] {
+  transform: translateY(14px);
+  transition-duration: 480ms;
+  transition-delay: 90ms;
+}
+
+[data-reveal="graphic"] {
+  transform: translateY(10px) scale(0.96);
+  transition-duration: 550ms;
+  transition-delay: 60ms;
+}
+
+/* Small, capped stagger for grids of cards — nth-child so it needs no JS. */
+.skills__grid [data-reveal]:nth-child(2),
+.projects-grid [data-reveal]:nth-child(2),
+.timeline-item:nth-child(2) {
+  transition-delay: 60ms;
+}
+.skills__grid [data-reveal]:nth-child(3),
+.projects-grid [data-reveal]:nth-child(3),
+.timeline-item:nth-child(3) {
+  transition-delay: 120ms;
+}
+.skills__grid [data-reveal]:nth-child(4),
+.projects-grid [data-reveal]:nth-child(n + 4),
+.timeline-item:nth-child(n + 4) {
+  transition-delay: 150ms;
+}
+
+/* ---- Hero photo interaction ---- */
+.hero__figure {
+  --tilt-x: 0px;
+  --tilt-y: 0px;
+}
+
+.hero__photo-backdrop {
+  transition: transform 420ms var(--ease-out);
+  transform: translate3d(calc(var(--tilt-x) * -0.6), calc(var(--tilt-y) * -0.6), 0);
+}
+
+.hero__photo {
+  transition: transform 350ms var(--ease-out), border-radius 350ms var(--ease-out),
+    box-shadow 350ms var(--ease-out);
+  transform: translate3d(var(--tilt-x), var(--tilt-y), 0);
+}
+
+.hero__figure:hover .hero__photo {
+  transform: translate3d(var(--tilt-x), var(--tilt-y), 0) scale(1.035);
+  border-radius: calc(var(--radius-lg) + 10px);
+  box-shadow: 0 32px 64px -16px hsl(var(--shadow-color) / 0.3);
+}
+
+.hero__figure:hover .hero__photo-backdrop {
+  transform: translate3d(calc(var(--tilt-x) * -0.6 + 8px), calc(var(--tilt-y) * -0.6 - 10px), 0) scale(1.05);
+}
+
+/* ---- Floating decorative elements ---- */
+.floater {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+.floater--glyph {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.floater--ambient {
+  animation: floater-idle 7s var(--ease-out) infinite alternate;
+}
+
+.floater--hero {
+  top: 8%;
+  right: -0.5rem;
+  font-size: 1.75rem;
+  opacity: 0.35;
+}
+
+.floater--sobre {
+  right: clamp(0.5rem, 4vw, 4rem);
+  bottom: -1.5rem;
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.floater--trajetoria {
+  left: clamp(0.5rem, 4vw, 3rem);
+  bottom: -1.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  opacity: 0.4;
+}
+
+.floater--projetos {
+  right: clamp(0.5rem, 3vw, 3.5rem);
+  bottom: -1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.32;
+}
+
+@keyframes floater-idle {
+  from {
+    transform: translate3d(0, -6px, 0) rotate(-3deg);
+  }
+  to {
+    transform: translate3d(0, 6px, 0) rotate(3deg);
+  }
+}
+
+/* Floaters sit near section edges, never over the readable column, and are
+   hidden below md since there isn't enough side gutter to keep them clear
+   of text once the layout narrows. */
+@media (max-width: 767px) {
+  .floater {
+    display: none;
+  }
+}
+
+/* ---- Card hover refinements ---- */
+.card {
+  transition: box-shadow 300ms var(--ease-out), border-color 300ms var(--ease-out);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.project-card {
+  transition: transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out),
+    border-color 300ms var(--ease-out);
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+
+.project-card__mark {
+  transition: transform 250ms var(--ease-out);
+}
+
+.project-card:hover .project-card__mark {
+  transform: scale(1.08);
+}
+
+.icon-forward {
+  display: inline-block;
+  transition: transform 220ms var(--ease-out);
+}
+
+.project-card:hover [data-project-detail] .icon-forward,
+.project-dialog__actions a:hover .icon-forward {
+  transform: translateX(3px);
+}
+
+.project-spotlight {
+  transition: box-shadow 300ms var(--ease-out), border-color 300ms var(--ease-out);
+}
+
+.project-spotlight:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+
+.project-spotlight:hover .project-card__mark {
+  transform: scale(1.06);
+}
+
+.icon-btn {
+  transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out),
+    color 200ms var(--ease-out), background-color 200ms var(--ease-out);
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ---- prefers-reduced-motion: neutralise everything above ---- */
+@media (prefers-reduced-motion: reduce) {
+  .floater--ambient {
+    animation: none;
+  }
+
+  .hero__photo,
+  .hero__photo-backdrop,
+  .project-card,
+  .project-spotlight,
+  .icon-btn,
+  .card,
+  .icon-forward,
+  .project-card__mark {
+    transition: none !important;
+  }
+
+  .project-card:hover,
+  .project-card:focus-within,
+  .icon-btn:hover {
+    transform: none;
+  }
+}

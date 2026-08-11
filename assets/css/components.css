@@ -1,0 +1,656 @@
+/* ==========================================================================
+   Components — reusable UI pieces used across sections.
+   ========================================================================== */
+
+/* ---- Eyebrow / section header ---- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.section-header {
+  max-width: 40rem;
+  margin-bottom: var(--space-8);
+}
+
+.section-header .eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.section-header h2 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.section-header p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-md);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: transform var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-strong);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn--sm {
+  padding: 0.55rem 1.1rem;
+  font-size: var(--fs-xs);
+}
+
+.btn svg {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
+/* ---- Icon-only button (theme toggle, nav toggle, back-to-top) ---- */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+}
+
+.icon-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.icon-btn svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* ---- Social link list (contact / footer) ---- */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ---- Tech badges ---- */
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+}
+
+.badge--accent {
+  color: var(--color-accent-strong);
+  background: var(--color-accent-soft);
+  border-color: transparent;
+}
+
+/* ---- Generic surface card ---- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out);
+}
+
+/* ---- Project cards ---- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+
+.project-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-6) 0;
+}
+
+.project-card__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--fs-md);
+}
+
+.project-card__status {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-text-faint);
+}
+
+.project-card__body {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--space-3);
+}
+
+.project-card__body h3 {
+  font-size: var(--fs-lg);
+}
+
+.project-card__role {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+}
+
+.project-card__summary {
+  color: var(--color-text-muted);
+}
+
+.project-card__list {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.project-card__list li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.project-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+}
+
+.project-card__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+}
+
+.project-card__links {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Compact variant for "other projects" */
+.project-card--compact .project-card__body {
+  padding: var(--space-5);
+  gap: var(--space-2);
+}
+
+.project-card--compact .project-card__media {
+  padding: var(--space-5) var(--space-5) 0;
+}
+
+.project-card--compact h3 {
+  font-size: var(--fs-md);
+}
+
+.project-card--compact .project-card__mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: var(--fs-sm);
+}
+
+/* ---- Skill group ---- */
+.skill-group {
+  padding: var(--space-6);
+}
+
+.skill-group__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-md);
+}
+
+.skill-group__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  flex-shrink: 0;
+}
+
+.skill-group__icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* ---- Timeline (Formação & trajetória) ---- */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.4rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(var(--color-border), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  border: 2px solid var(--color-accent);
+}
+
+.timeline-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.timeline-item__date {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.03em;
+}
+
+.timeline-item h3 {
+  font-size: var(--fs-md);
+}
+
+.timeline-item p {
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* ---- Quick facts list (About) ---- */
+.fact-list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.fact-list dt {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+}
+
+.fact-list dd {
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  margin-top: 0.2rem;
+}
+
+/* ---- Form fields (contact) ---- */
+.field {
+  position: relative;
+  margin-bottom: var(--space-5);
+}
+
+.field label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--color-text-faint);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.field textarea {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+
+.form-status {
+  min-height: 1.4em; /* reserve space so the message appearing doesn't shift layout */
+  margin-top: var(--space-4);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.form-status[data-state="sending"] {
+  color: var(--color-text-muted);
+}
+
+.form-status[data-state="success"] {
+  color: var(--color-success);
+}
+
+.form-status[data-state="error"] {
+  color: var(--color-danger);
+}
+
+/* ---- Dialog (project detail) ---- */
+.project-dialog {
+  width: min(40rem, calc(100vw - 2.5rem));
+  max-height: min(85vh, 46rem);
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-dialog::backdrop {
+  background: hsl(220 30% 6% / 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.project-dialog__inner {
+  padding: var(--space-7);
+  overflow-y: auto;
+  max-height: min(85vh, 46rem);
+}
+
+.project-dialog__close {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin-left: var(--space-4);
+}
+
+.project-dialog h3 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-2);
+  clear: both;
+}
+
+.project-dialog__section {
+  margin-top: var(--space-5);
+}
+
+.project-dialog__section h4 {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-2);
+}
+
+.project-dialog__section p,
+.project-dialog__section li {
+  color: var(--color-text-muted);
+}
+
+.project-dialog__section ul {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.project-dialog__section li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.project-dialog__section li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+}
+
+.project-dialog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* ---- Step flow: role progression, architecture/process diagrams ---- */
+.step-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.step-flow__item {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-subtle);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+.step-flow__item.is-current {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+}
+
+.step-flow__item small {
+  display: block;
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: var(--color-text-faint);
+  margin-top: 0.15rem;
+}
+
+.step-flow__arrow {
+  color: var(--color-text-faint);
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+}
+
+.step-flow--diagram .step-flow__item {
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+/* ---- Experience cards ---- */
+.experience__card {
+  padding: var(--space-6);
+}
+
+.experience__card h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-1);
+}
+
+.experience__caption {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.experience__card .step-flow {
+  margin-top: var(--space-2);
+}
+
+/* ---- Project spotlight (single flagship project) ---- */
+.project-spotlight {
+  padding: var(--space-7);
+  margin-bottom: var(--space-8);
+}
+
+.project-spotlight__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.project-spotlight__header h3 {
+  font-size: var(--fs-xl);
+  margin: var(--space-1) 0 var(--space-1);
+}
+
+.project-spotlight__body {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.project-spotlight__text {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+}
+
+.project-spotlight__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .project-spotlight__body {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}

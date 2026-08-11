@@ -1,391 +1,684 @@
-<!DOCTYPE html>
-<html lang="pt-br" id = "html">
-
+<!doctype html>
+<html lang="pt-BR" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaiky Matsumoto — Analista de Sistemas Pleno</title>
+  <meta
+    name="description"
+    content="Portfólio de Kaiky Matsumoto, Analista de Sistemas Pleno com experiência em ERP, integrações financeiras e desenvolvimento Full-Stack com C#/.NET, Java/Spring Boot e Angular."
+  />
+  <link rel="canonical" href="https://koekoki.github.io/" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0d14" media="(prefers-color-scheme: dark)" />
 
-    <!-- Icones -->
-    <link rel="stylesheet" href="assets/fonts/style.css" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kaiky Matsumoto — Portfólio" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://koekoki.github.io/" />
+  <meta property="og:title" content="Kaiky Matsumoto — Analista de Sistemas Pleno" />
+  <meta
+    property="og:description"
+    content="Portfólio de Kaiky Matsumoto, Analista de Sistemas Pleno com experiência em ERP, integrações financeiras e desenvolvimento Full-Stack com C#/.NET, Java/Spring Boot e Angular."
+  />
+  <meta property="og:image" content="https://koekoki.github.io/assets/img/kaiky-photo.jpg" />
+  <meta property="og:image:width" content="960" />
+  <meta property="og:image:height" content="1280" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kaiky Matsumoto — Analista de Sistemas Pleno" />
+  <meta
+    name="twitter:description"
+    content="Portfólio de Kaiky Matsumoto, Analista de Sistemas Pleno com experiência em ERP, integrações financeiras e desenvolvimento Full-Stack."
+  />
+  <meta name="twitter:image" content="https://koekoki.github.io/assets/img/kaiky-photo.jpg" />
 
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/fotos/icone.png" />
+  <link rel="apple-touch-icon" href="assets/fotos/icone.png" />
 
-    <link rel="stylesheet" href="estilo.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="stylesheet" href="assets/fonts/style.css">
+  <!-- Icons (icomoon) -->
+  <link rel="stylesheet" href="assets/fonts/style.css" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="shortcut icon" href="assets/fotos/icone.png">
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/motion.css" />
 
-    <title>Kaiky Matsumoto</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kaiky Matsumoto",
+      "url": "https://koekoki.github.io/",
+      "image": "https://koekoki.github.io/assets/img/kaiky-photo.jpg",
+      "jobTitle": "Analista de Sistemas Pleno",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Target Sistemas"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP)"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "FIAP"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "sameAs": ["https://github.com/koekoki", "https://www.linkedin.com/in/kaiky-matsumoto/"]
+    }
+  </script>
 </head>
 
-<body id = "body">
-    <header id="header">
-        <nav class="container">
-            <a class="caixa-logo" >
-                <img id = "minhaLogo" src="assets/fotos/LogoMinha.png" alt="LogoMinha" class="logo">
-            </a>
-            <!-- menu -->
-            <div class="menu">
-                
-                    <ul class="grid">
-                        <li><a class="title-2" onclick = "remover()" href="#home">Início</a></li>
-                        <li><a class="title-2" onclick = "remover()" href="#sobre">Sobre</a></li>
-                        <li><a class="title-2" onclick = "remover()" href="#projetos">Projetos</a></li>
-                        <li><a class="title-2" onclick = "remover()" href="#skills">Skills</a></li>
-                        <li><a class="title-2" onclick = "remover()" href="#contato">Contato</a></li>
-                        <hr>
-                        <div>
-                            <a href="https://www.instagram.com/matusumotu/" target="blanck"><i class="icon-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/kaiky-matsumoto/" target="blanck"> <i class="icon-linkedin"></i></a>
-                            <a href="https://github.com/koekoki" target="blanck"><i class="icon-github"></i></a>
-                        </div>
-                    </ul>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
- 
-                
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#topo" aria-label="Kaiky Matsumoto — ir para o início">
+        <span class="logo__mark" aria-hidden="true">K</span>
+        <span class="logo__text">Kaiky Matsumoto</span>
+      </a>
 
-                    <div id = "quadrado" class = "form"></div>
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#trajetoria">Trajetória</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
 
-            </div>
+      <div class="header__actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 4.5a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1.5a1 1 0 0 1-1 1Zm0 17a1 1 0 0 1-1-1V19a1 1 0 1 1 2 0v1.5a1 1 0 0 1-1 1ZM4.5 13H2a1 1 0 1 1 0-2h2.5a1 1 0 1 1 0 2Zm17.5 0h-2.5a1 1 0 1 1 0-2H22a1 1 0 1 1 0 2ZM6.16 7.58a1 1 0 0 1-.71-.29L4.4 6.24a1 1 0 1 1 1.42-1.42l1.05 1.05a1 1 0 0 1-.71 1.71Zm12.3 12.3a1 1 0 0 1-.71-.3l-1.05-1.04a1 1 0 0 1 1.42-1.42l1.04 1.05a1 1 0 0 1-.7 1.71ZM5.11 19.88a1 1 0 0 1-.71-1.71l1.05-1.05a1 1 0 0 1 1.42 1.42l-1.05 1.04a1 1 0 0 1-.71.3Zm12.3-12.3a1 1 0 0 1-.71-1.7l1.05-1.05a1 1 0 1 1 1.42 1.42L18.12 7.3a1 1 0 0 1-.71.29ZM12 17.5A5.5 5.5 0 1 1 17.5 12 5.5 5.5 0 0 1 12 17.5Z"
+            />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M20.742 13.045a8.088 8.088 0 0 1-2.077.273c-4.464 0-8.08-3.616-8.08-8.08 0-1.582.454-3.058 1.24-4.306a1 1 0 0 0-1.086-1.502A10.098 10.098 0 0 0 2 9.472C2 15.294 6.706 20 12.528 20a10.096 10.096 0 0 0 9.517-6.71 1 1 0 0 0-1.303-1.245Z"
+            />
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+          <i class="icon-menu" aria-hidden="true"></i>
+          <i class="icon-x" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
 
-            <input type="checkbox" class = "checkbox" id="checkbox">
-            <label for="checkbox" class = "label"> 
-              
-            </label>
+    <div class="mobile-nav" id="mobile-nav" data-state="closed">
+      <ul class="mobile-nav__list">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#trajetoria">Trajetória</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="mobile-nav__social social-links">
+        <a class="icon-btn" href="https://github.com/koekoki" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Kaiky Matsumoto (abre em nova aba)"><i class="icon-github" aria-hidden="true"></i></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/kaiky-matsumoto/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kaiky Matsumoto (abre em nova aba)"><i class="icon-linkedin" aria-hidden="true"></i></a>
+        <a class="icon-btn" href="mailto:kaiky.matsumoto@gmail.com" aria-label="Enviar e-mail para Kaiky Matsumoto"><i class="icon-envelope" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </header>
 
-
-            <input id = "hamburguer" type="checkbox">
-            <label for="hamburguer">
-                <div class = "hamburguer toggle"> </div>
-            </label>
-
-        </nav>
-    </header>
-    <main>
-        <section class="section" id="home">
-            <div class="container">
-                
-                <h1 class="title">
-                    <div class="hifen"></div> Kaiky Matsumoto
-                </h1>
-                <div class="text">
-                    <p class="title-2">
-                        Olá, meu <br>
-                        nome é Kaiky.<br>
-                        Eu sou um <br>
-                        desenvolvedor <br>
-                        Full-Stack.
-                    </p>
-                </div>
-
-            </div>
-            <div class="caixa-avatar">
-                <div class="avatar">
-                    <div class = "circulo4"></div>
-                    <div class = "circulo3"></div>
-                    <div class="circulo">
-                        <img src="assets/fotos/eu.jpeg" alt="Eu">
-                    </div>
-                    <div class = "circulo5"></div>
-                    <div class="circulo6"></div>
-                    <div class="circulo7"></div>
-                    <div class = "circulo2"></div>
-                </div>
-                <div class = "circulo5 cirq"></div>
-                <div class="circulo6 cirq" ></div>
-                <div class="circulo7 cirq"></div>
-                <div class = "circulo2 cirq"></div>
-                <div class = "circulo4 cirq"></div>
-                    <div class = "circulo3 cirq"></div>
-            </div>
-        
-        </section>
-    </main>
-    <section id="sobre" class="section">
-
-        <div class="container">
-            <h2 class="title">
-                <div class=hifen></div> Sobre mim =&#41
-            </h2>
-            <p id = "me" class="text">
-                Eu amo desfrutar minha lógica, <br> criando aplicações para melhorar a humanidade. <br> 
-            </p>
-            <h2 class="title-2">
-                Penso.
-                Faço.<br>
-                Resolvo. 
-            </h2>
-            <div class = "sub-container">
-                <div class="center "> <a class = "text button" href="assets/CV_KAIKY_MATSUMOTO.pdf" target="blanck"> <i class="icon-download"></i> Baixar CV</i></a> <br>
-                    <a class = "text block button" href = "https://www.linkedin.com/in/kaiky-matsumoto/" target="blanck"> <i class="icon-linkedin"></i> Linkedin</a></div>
-                <div class="center-2">
-                    <img src="assets/fotos/olhos.png" alt="olhos-direita">
-                </div>
-    
-
-            </div>
-        </div>
-    </section>
-    <section class="section" id="projetos">
-        <div class="container">
-            <header>
-                <h3 class="title">
-                    <div class=hifen></div> Portifólio
-                </h3>
-                <label class="title-2">Meus <br> Projetos.</label>
-            </header>
-          <div class="swiper swiper-container">
-            <div class="swiper-wrapper">
-              <div daka class="swiper-slide">
-                
-                <div class = "card grid">
-                  <div class="center">
-                      <div class="circulo lampada">
-                          <img src="assets/fotos/lampada.png" alt="lampada">
-                      </div>
-                  </div>
-                  <p class="title-2">Site - DAKA</p>
-                  <p class=text>
-                      Projeto escolar - <br>
-                      Banco de questões para
-                      estudantes do vestibular.</p>
-                  <div class="center">
-                      <a class ="button" href="https://github.com/koekoki/site-DAKA" target="blank">ver mais <i class="icon-forward"></i> </a>
-                  </div>
-              </div>
-
-
-              </div>
-
-              <div id = "mage" class="swiper-slide">
-
-                <div class = "card grid">
-                  <div class="center">
-                    
-                        <div class="circulo mage">
-                            <img src="assets/fotos/chapeu-de-mago.png" alt="mage">
-                        </div>
-                    </div>
-                  <p class="title-2">Game - Mage</p>
-                  <p class=text>
-                      Projeto pessoal - <br>
-                      Jogo de probabilidade feito em javascript durante a Imersão js da Alura.</p>
-                  <div class="center">
-                      <a class ="button" href="https://github.com/koekoki/jogoDoMaguinho" target="blank"> ver mais <i class="icon-forward"></i> </a>
-                  </div>
-              </div>
-
-              </div>
-
-              <div kuarasy class="swiper-slide">
-
-                <div class = "card grid">
-                  <div class="center">
-                      <div class="circulo sol">
-                          <img src="assets/fotos/sun.png" alt="sol">
-                      </div>
-                  </div>
-                  <p class="title-2">Site - Kuarasy</p>
-                  <p class=text>
-                      Projeto escolar - <br>
-                      E-Commerce de produtos artesanais etnicos dos imigrantes no Brasil.</p>
-                  <div class="center">
-                      <a  href = "https://github.com/IFSPKuarasy" target="blank" class ="button">ver mais <i class="icon-forward"></i> </a>
-                  </div>
-              </div>
-
-              </div>
-
-              <div gama class="swiper-slide">
-
-                <div class = "card grid">
-                  <div class="center">
-                      <div class="circulo gama">
-                          <img src="assets/fotos/light-bulb.png" alt="cerebro">
-                      </div>
-                  </div>
-                  <p class="title-2">Teste - Gama</p>
-                  <p class=text>
-                      Desafio de lógica - <br>
-                      codificando a soma do fibonacci mais o fatorial com o alfabeto.</p>
-                  <div class="center">
-                      <a class ="button" href="https://github.com/koekoki/EstagioGama" target="blank">ver mais <i class="icon-forward"></i> </a>
-                  </div>
-              </div>
-
-              </div>
-
-              <div calculadora class="swiper-slide">
-
-                <div class = "card grid">
-                  <div class="center">
-                      <div class="circulo calculadora">
-                          <img class = "img-calculadora" src="assets/fotos/calculadora.png" alt="calculadora">
-                      </div>
-                  </div>
-                  <p class="title-2">Projeto - Calc3D</p>
-                  <p class=text>
-                    Projeto pessoal - <br>
-                    Calculadora simples feitas em javascript durante as aulas de AW1.</p>
-                  <div class="center">
-                      <a class ="button" href="https://koekoki.github.io/AW1/Projeto/PB3/Calculadora/" target="blank">ver mais <i class="icon-forward"></i> </a>
-                  </div>
-              </div>
-
-              </div>
-
-              <div LatimCodeWeek class="swiper-slide">
-
-                <div class = "card grid">
-                  <div class="center">
-                      <div class="circulo LCW">
-                          <img class = "img-LCW" src="assets/fotos/LCW.jpg" alt="LCW">
-                      </div>
-                  </div>
-                  <p class="title-2">Evento - LCW</p>
-                  <p class=text>
-                    Projeto DoJobs -<br>
-                    Idealização do aplicativo sobre Empregabilidade Jovem.</p>
-                  <div class="center">
-                      <a class ="button" href="assets/LCW_KAIKY.pdf" target="blank">ver mais <i class="icon-forward"></i> </a>
-                  </div>
-              </div>
-
-              </div>
-
-            </div>
-
-            <!-- If we need pagination -->
-            <div class="swiper-button-prev"></div>
-            <div  class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
-        
-            
+  <main id="conteudo">
+    <section class="hero" id="topo">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow" data-reveal="title">Analista de Sistemas Pleno</p>
+          <h1 class="hero__name" data-reveal="title">Kaiky Matsumoto</h1>
+          <p class="hero__lead" data-reveal="lead">
+            Desenvolvo e evoluo sistemas ERP e integrações financeiras — cobrança, boletos, Pix, conciliação — com
+            C#/.NET, Java/Spring Boot e Angular. Também construo aplicações completas por conta própria, do banco de
+            dados à interface.
+          </p>
+          <ul class="hero__focus">
+            <li>Sistemas ERP &amp; integrações financeiras</li>
+            <li>Back-end em C#/.NET e Java/Spring Boot</li>
+            <li>Front-end com Angular, TypeScript e JavaScript</li>
+          </ul>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projetos">Ver projetos</a>
+            <a class="btn btn--ghost" href="#contato">Entrar em contato</a>
+          </div>
+          <div class="hero__social social-links">
+            <a class="icon-btn" href="https://github.com/koekoki" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Kaiky Matsumoto (abre em nova aba)"><i class="icon-github" aria-hidden="true"></i></a>
+            <a class="icon-btn" href="https://www.linkedin.com/in/kaiky-matsumoto/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kaiky Matsumoto (abre em nova aba)"><i class="icon-linkedin" aria-hidden="true"></i></a>
+            <a class="icon-btn" href="mailto:kaiky.matsumoto@gmail.com" aria-label="Enviar e-mail para Kaiky Matsumoto"><i class="icon-envelope" aria-hidden="true"></i></a>
           </div>
         </div>
-      </section>
-    <section id="skills" class="section">
-        <div class="section">
-            <div class="container">
-                <h4 class="title-2">Hard Skills.</h3>
-                    <p class="white">Alguns dos meus conhecimentos  <br> na área da programação.</p>
 
-                    <div class="espaço" data-fly="right">
-                        <img class="foguete"  src="assets/fotos/foguetes.png" alt="foguetes">
-                    </div>
-                    <div id="habilidades" class="grid">
-
-                        <div id="html"><img src="assets/fotos/html.png" alt="html">
-                            <div class="dividider-2"></div>
-                        </div>
-                        <div id="java"><img src="assets/fotos/java.png" alt="java">
-                            <div class="dividider-2"></div>
-                        </div>
-                        <div id="javascript"><img src="assets/fotos/javascript.png" alt="javascript">
-                            <div class="dividider-2"></div>
-                        </div>
-                        <div id="css"><img src="assets/fotos/css.png" alt="css">
-                            <div class="dividider-2"></div>
-                        </div>
-                        <div id="sql"><img src="assets/fotos/sql.png" alt="sql">
-                            <div class="dividider-2"></div>
-                        </div>
-                        <div id="C-Sharp"><img src="assets/fotos/c.png" alt="c#">
-                            <div class="dividider-2"></div>
-                        </div>
-
-                    </div>
-            </div>
+        <div class="hero__figure" data-reveal="graphic">
+          <div class="hero__photo-backdrop" aria-hidden="true"></div>
+          <span class="floater floater--hero floater--glyph floater--ambient" aria-hidden="true">{ }</span>
+          <picture>
+            <source srcset="assets/img/kaiky-photo.webp" type="image/webp" />
+            <img
+              class="hero__photo"
+              src="assets/img/kaiky-photo.jpg"
+              alt="Retrato de Kaiky Matsumoto"
+              width="960"
+              height="1280"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
+      </div>
     </section>
+
+    <section class="section" id="sobre">
+      <div class="container about__grid">
+        <div data-reveal>
+          <div class="section-header">
+            <p class="eyebrow">Sobre</p>
+            <h2>Da lógica ao produto completo</h2>
+          </div>
+          <p class="about__lead">
+            Sou Analista de Sistemas Pleno na Target Sistemas, empresa em que cresci de estagiário até a posição
+            atual desenvolvendo soluções ERP — com foco em sistemas financeiros e integrações entre plataformas.
+            Formado em Informática pelo IFSP, curso atualmente Análise e Desenvolvimento de Sistemas na FIAP
+            (2026–2028). No dia a dia, transito entre back-end, front-end, banco de dados e investigação de
+            problemas em produção, sempre buscando entender o sistema de ponta a ponta.
+          </p>
+          <ul class="about__focus">
+            <li>Cresci de estagiário a Analista de Sistemas Pleno na mesma empresa</li>
+            <li>Transito entre back-end, front-end, banco de dados e integrações externas</li>
+            <li>Aprendizado contínuo por formação formal, cursos e desafios de lógica</li>
+          </ul>
+          <div class="hero__actions" style="margin-top: 2rem">
+            <a class="btn btn--ghost" href="assets/CV_KAIKY_MATSUMOTO.pdf" target="_blank" rel="noopener noreferrer">
+              <i class="icon-download" aria-hidden="true"></i> Baixar CV
+            </a>
+          </div>
+        </div>
+
+        <dl class="card fact-list" data-reveal>
+          <div>
+            <dt>Cargo atual</dt>
+            <dd>Analista de Sistemas Pleno · Target Sistemas</dd>
+          </div>
+          <div>
+            <dt>Localização</dt>
+            <dd>São Paulo, SP</dd>
+          </div>
+          <div>
+            <dt>Formação</dt>
+            <dd>Téc. em Informática (IFSP) · ADS em andamento (FIAP, 2026–2028)</dd>
+          </div>
+          <div>
+            <dt>Idiomas</dt>
+            <dd>Português, Inglês básico</dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/koekoki" target="_blank" rel="noopener noreferrer">github.com/koekoki</a></dd>
+          </div>
+        </dl>
+      </div>
+      <span
+        class="floater floater--sobre floater--glyph"
+        data-parallax
+        data-parallax-speed="-18"
+        data-parallax-rotate="-6"
+        aria-hidden="true"
+        >&lt;/&gt;</span
+      >
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Experiência Profissional</p>
+          <h2>ERP, sistemas financeiros &amp; integrações</h2>
+          <p>
+            Atuo na Target Sistemas desde estagiário — hoje como Analista de Sistemas Pleno — desenvolvendo e
+            evoluindo soluções ERP, com forte atuação no módulo Financeiro e nas integrações entre o ERP e
+            instituições financeiras.
+          </p>
+        </div>
+
+        <div class="experience__grid">
+          <div class="card experience__card" data-reveal>
+            <a
+              href="https://www.linkedin.com/company/target-sistemas/posts/?feedView=all"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar LinkedIn da Target Sistemas">
+              <h3>Target Sistemas</h3>
+            </a>
+            <p class="project-card__role">Analista de Sistemas Pleno</p>
+            <div class="step-flow" aria-label="Trajetória de cargos na Target Sistemas">
+              <span class="step-flow__item">Estagiário</span>
+              <span class="step-flow__arrow" aria-hidden="true">→</span>
+              <span class="step-flow__item">Analista Jr I</span>
+              <span class="step-flow__arrow" aria-hidden="true">→</span>
+              <span class="step-flow__item">Analista Jr II</span>
+              <span class="step-flow__arrow" aria-hidden="true">→</span>
+              <span class="step-flow__item is-current">Analista Pleno</span>
+            </div>
+            <p class="experience__caption">Áreas de atuação</p>
+            <div class="badge-group">
+              <span class="badge badge--accent">Sistemas ERP</span>
+              <span class="badge badge--accent">Integrações Bancárias</span>
+              <span class="badge badge--accent">Cobrança &amp; Pix</span>
+              <span class="badge badge--accent">APIs REST</span>
+              <span class="badge badge--accent">Processamento Assíncrono</span>
+              <span class="badge badge--accent">Troubleshooting em Produção</span>
+            </div>
+          </div>
+
+          <div class="card experience__card" data-reveal>
+            <h3>Integrações &amp; Sistemas Financeiros</h3>
+            <p class="about__lead" style="margin-bottom: var(--space-5)">
+              Desenvolvo, mantenho e evoluo integrações entre o ERP e instituições financeiras — cobrança bancária,
+              boletos, Pix, conciliação e sincronização de títulos. No dia a dia isso significa lidar com
+              autenticação, certificados digitais, tratamento de erros e indisponibilidade de serviços externos,
+              processamento assíncrono e jobs automáticos.
+            </p>
+            <div class="step-flow step-flow--diagram" aria-label="Camadas investigadas ao resolver um incidente de integração">
+              <span class="step-flow__item">ERP</span>
+              <span class="step-flow__arrow" aria-hidden="true">→</span>
+              <span class="step-flow__item">Back-end</span>
+              <span class="step-flow__arrow" aria-hidden="true">→</span>
+              <span class="step-flow__item">Banco de Dados &amp; Serviços</span>
+              <span class="step-flow__arrow" aria-hidden="true">→</span>
+              <span class="step-flow__item">API Externa</span>
+            </div>
+            <p class="experience__caption">
+              Boa parte da minha rotina é investigar problemas que atravessam essas camadas até a causa raiz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--subtle" id="trajetoria">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Trajetória</p>
+          <h2>Formação &amp; marcos</h2>
+          <p>Os principais marcos técnicos e acadêmicos até aqui, em ordem cronológica.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Set. 2018</span>
+            </div>
+            <h3>Olimpíada Brasileira de Informática</h3>
+            <p>Classificação para a 2ª fase da OBI, resolvendo problemas de lógica e algoritmos.</p>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Ago. 2020</span>
+            </div>
+            <h3>Imersões Alura — CSS, JavaScript e GameDev</h3>
+            <p>Base de front-end e lógica de programação; o jogo "Mage" nasceu da imersão de JavaScript.</p>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Set. 2021</span>
+            </div>
+            <h3>Latin Code Week — Junior Achievement × SAP</h3>
+            <p>
+              Programa de empreendedorismo e carreiras em STEM. O projeto "DoJobs", sobre empregabilidade jovem,
+              ficou em 2º lugar.
+              <a href="assets/LCW_KAIKY.pdf" target="_blank" rel="noopener noreferrer">Ver certificado</a>
+            </p>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Dez. 2021</span>
+            </div>
+            <h3>Projeto Kuarasy</h3>
+            <p>
+              E-commerce em equipe de 5 pessoas com ASP.NET MVC e SQL Server, para produtos artesanais de imigrantes
+              no Brasil.
+            </p>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Mai. 2022</span>
+            </div>
+            <h3>API de controle financeiro</h3>
+            <p>Back-end em Java e Spring Boot, com modelagem de dados via JPA e testes unitários.</p>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Jun. 2022</span>
+            </div>
+            <h3>ProEventos</h3>
+            <p>Sistema de gestão de eventos com Web API em C#, Entity Framework Core e front-end em Angular.</p>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">2022</span>
+            </div>
+            <h3>IFSP — Técnico Integrado em Informática</h3>
+            <p>Conclusão do ensino médio técnico em Informática, período noturno.</p>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">2026</span>
+            </div>
+            <h3>FIAP — Análise e Desenvolvimento de Sistemas</h3>
+            <p>Início da graduação em ADS, com conclusão prevista para 2028.</p>
+          </li>
+        </ol>
+      </div>
+      <svg
+        class="floater floater--trajetoria"
+        data-parallax
+        data-parallax-speed="14"
+        data-parallax-rotate="8"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle cx="10" cy="12" r="3" fill="currentColor" />
+        <circle cx="38" cy="10" r="2.5" fill="currentColor" />
+        <circle cx="24" cy="34" r="3.5" fill="currentColor" />
+        <path
+          d="M10 12 L24 34 M38 10 L24 34 M10 12 L38 10"
+          stroke="currentColor"
+          stroke-width="1.5"
+          opacity="0.6"
+        />
+      </svg>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Stack</p>
+          <h2>Tecnologias e ferramentas</h2>
+          <p>Organizado por área, com base no que já apliquei em projetos reais.</p>
+        </div>
+
+        <div class="skills__grid">
+          <div class="card skill-group" data-reveal>
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v3H3V5a1 1 0 0 1 1-1Zm-1 6h18v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8Zm3 3v2h6v-2H6Z"/></svg>
+              </span>
+              Backend
+            </h3>
+            <div class="badge-group">
+              <span class="badge">C#</span>
+              <span class="badge">ASP.NET Core</span>
+              <span class="badge">Web API</span>
+              <span class="badge">Java</span>
+              <span class="badge">Spring Boot</span>
+              <span class="badge">PHP</span>
+              <span class="badge">POO</span>
+            </div>
+          </div>
+
+          <div class="card skill-group" data-reveal>
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M3 3h18l-1.6 16.2L12 21l-7.4-1.8L3 3Zm14.2 4H7.4l.2 2h9.2l-.3 3.3H10l.2 2.1h6.1l-.3 2.8-3.9 1.1-4-1.1-.3-2.8h2l.1 1.3 2.1.6 2.2-.6.2-2.4H7.1L6.5 6h11.1l-.4 1Z"/></svg>
+              </span>
+              Frontend
+            </h3>
+            <div class="badge-group">
+              <span class="badge">Angular</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">HTML5</span>
+              <span class="badge">CSS3 / SCSS</span>
+              <span class="badge">Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="card skill-group" data-reveal>
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Zm-8 6.5c0 1.7 3.6 3 8 3s8-1.3 8-3V11c0 1.7-3.6 3-8 3s-8-1.3-8-3V8.5Zm0 6c0 1.7 3.6 3 8 3s8-1.3 8-3V17c0 1.7-3.6 3-8 3s-8-1.3-8-3v-2.5Z"/></svg>
+              </span>
+              Banco de Dados
+            </h3>
+            <div class="badge-group">
+              <span class="badge">SQL Server</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">MySQL</span>
+              <span class="badge">Entity Framework Core</span>
+              <span class="badge">Spring Data JPA</span>
+            </div>
+          </div>
+
+          <div class="card skill-group" data-reveal>
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="m12 15.5-1.4-1.4L14.2 10 10.6 6.4 12 5l5.4 5-5.4 5.5ZM6 5l5.4 5L6 15.5 4.6 14 8.2 10 4.6 6.4 6 5Z"/></svg>
+              </span>
+              Ferramentas &amp; Práticas
+            </h3>
+            <div class="badge-group">
+              <span class="badge">Git &amp; GitHub</span>
+              <span class="badge">Azure DevOps</span>
+              <span class="badge">MVC</span>
+              <span class="badge">Kanban &amp; Scrum</span>
+              <span class="badge">Testes automatizados</span>
+              <span class="badge">C++</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--subtle" id="projetos">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Projetos</p>
+          <h2>O que eu construí</h2>
+          <p>
+            Minha atuação profissional acontece em sistemas comerciais fechados — aqui estão os projetos públicos
+            que mostram como eu escrevo código, do banco de dados à interface. Todos com repositório aberto no
+            GitHub.
+          </p>
+        </div>
+
+        <div data-spotlight-project></div>
+
+        <div class="projects-group">
+          <h3 class="projects-group__title">Projetos em destaque</h3>
+          <div class="projects-grid projects-grid--featured" data-featured-projects></div>
+          <noscript>
+            <p>Ative o JavaScript para ver os cards de projeto, ou visite diretamente <a href="https://github.com/koekoki">github.com/koekoki</a>.</p>
+          </noscript>
+        </div>
+
+        <div class="projects-group">
+          <h3 class="projects-group__title">Outros projetos</h3>
+          <div class="projects-grid projects-grid--other" data-other-projects></div>
+        </div>
+      </div>
+      <svg
+        class="floater floater--projetos"
+        data-parallax
+        data-parallax-speed="-12"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <ellipse cx="24" cy="10" rx="16" ry="6" fill="none" stroke="currentColor" stroke-width="2" />
+        <path
+          d="M8 10 V30 C8 33.3 15.2 36 24 36 C32.8 36 40 33.3 40 30 V10"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path d="M8 20 C8 23.3 15.2 26 24 26 C32.8 26 40 23.3 40 20" fill="none" stroke="currentColor" stroke-width="2" />
+      </svg>
+    </section>
+
     <section class="section" id="contato">
-        <div class="container">
-            <h5 class="title">
-                <div class=hifen></div> Diga olá 👋
-            </h5>
-            <label class="title-2"> Contato.</label>
-            <p class="text">Eae, quer falar comigo? <br>
-                Me mande um email =&#41</p>
-            <img class="aviao" data-fly = "left" src="assets/fotos/aviao-de-papel.png" alt="aviao">
-                <div class = "grid">
-                    <div class = "infos">
-                        <label  class = "text" for="telefone">  <i class = "icon-phone"></i>(11)94275-7764</label><br>
-                        <label class = "text" > <i class="icon-envelope"></i> kaiky.matsumoto@gmail.com</label><br>
-                        <label class = "text" > <i class = "icon-home"></i> Jardim Tremembé, São Paulo (SP)</label>
-                    </div>
-                    <form action="https://api.staticforms.xyz/submit" method="POST">
-                        <input type="hidden" name="accessKey" value="92c3a063-d392-4d63-b03d-bb49b6b6f44a">
-                        <div class="info-box">
-                            <input class="text" type="text" name="nome" required>
-                            <label class="text"><i class="icon-user"></i> Seu nome:</label>
-                        </div>
-                        <div class="info-box">
-                            <input class="text" type="email" name="email" required>
-                            <label class="text"> <i class="icon-paperplane"></i> Email:</label>
-                        </div>
-                        <div class="info-box">
-                            <input class="text" type="tel" name="phone" required>
-                            <label class="text">Telefone:</label>
-                        </div>
-                        <div class="info-box">
-                            <input class="text" type="text" name="subject" required>
-                            <label class="text">Assunto:</label>
-                        </div>
-                        <textarea class="text" name="message" placeholder="Mensagem: "></textarea>
-                        <input type="submit" value="Enviar" class="botao">
-                        
-                        <input type="hidden" name="redirectTo" value="https://koekoki.github.io/#contato">
-
-                    </form>
-                </div>
+      <div class="container contact__grid">
+        <div class="card contact__info" data-reveal>
+          <div class="section-header">
+            <p class="eyebrow">Contato</p>
+            <h2>Vamos conversar</h2>
+            <p>Os canais abaixo são a forma mais direta de falar comigo. Também dá para usar o formulário ao lado.</p>
+          </div>
+          <dl class="fact-list" style="grid-template-columns: 1fr">
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:kaiky.matsumoto@gmail.com">kaiky.matsumoto@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>Telefone</dt>
+              <dd><a href="tel:+5511942757764">(11) 94275-7764</a></dd>
+            </div>
+            <div>
+              <dt>Localização</dt>
+              <dd>São Paulo, SP</dd>
+            </div>
+          </dl>
+          <div class="social-links">
+            <a class="icon-btn" href="https://github.com/koekoki" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Kaiky Matsumoto (abre em nova aba)"><i class="icon-github" aria-hidden="true"></i></a>
+            <a class="icon-btn" href="https://www.linkedin.com/in/kaiky-matsumoto/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kaiky Matsumoto (abre em nova aba)"><i class="icon-linkedin" aria-hidden="true"></i></a>
+          </div>
         </div>
-        
+
+        <div class="card contact__form-wrap" data-reveal>
+          <!--
+            Contact service: Web3Forms (https://web3forms.com), chosen because it's free,
+            actively maintained, built for static sites, and its Access Key is explicitly
+            documented as safe for public/client-side use (it is NOT a secret).
+            TODO(kaiky): create a free Access Key at https://web3forms.com/ and paste it below,
+            replacing the placeholder. See assets/js/modules/contact-form.js for details.
+          -->
+          <form
+            id="contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="access_key" value="TODO_WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="from_name" value="Portfólio — Kaiky Matsumoto" />
+            <input type="hidden" name="redirect" value="https://koekoki.github.io/#contato" />
+            <!-- Honeypot: real users never see or fill this; bots often do. -->
+            <input
+              type="checkbox"
+              name="botcheck"
+              id="botcheck"
+              class="visually-hidden"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+
+            <div class="field-row">
+              <div class="field">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" name="nome" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" autocomplete="email" required />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="phone">Telefone</label>
+                <input id="phone" type="tel" name="phone" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="subject">Assunto</label>
+                <input id="subject" type="text" name="subject" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button class="btn btn--primary" type="submit" id="contact-submit">
+              <i class="icon-paperplane" aria-hidden="true"></i>
+              <span class="btn__label">Enviar mensagem</span>
+            </button>
+
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
     </section>
-    <footer>
-        <section id="footer">
-            <div class="container grid section">
-                <div class = "right map"><strong> Site map</strong></div> 
-                <div class="right"><a class = "map" href="#header">Inicio</a> </div>
-                <div class = "conteudo"><p >(11)94275-7764</p>  <a class = "map" href="#sobre" > sobre</a></div> 
-                <div class = "conteudo"><p > kaiky.matsumoto@gmail.com</p> <a class = "map" href="#projetos" > Projetos</a> </div>
-                <div class = "conteudo"><p for="copy">©2021 KAIKY MATSUMOTO</p><a class = "map" href="#skills" >Hard Skills</a> </div>
-                
-                <hr>      
-            <div>
-                <a href="https://www.instagram.com/matusumotu/" target="blanck"><i class="icon-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/kaiky-matsumoto/" target="blanck"> <i class="icon-linkedin"></i></a>
-                <a href="https://github.com/koekoki" target="blanck"><i class="icon-github"></i></a>
-            </div>
-            <div>
-               
-                
-            </div>
-        </div>
-        </section>
-    </footer>
-    <a href="#header" class="back-to-top"><i class="icon-arrow-up-outline"></i></a>
+  </main>
 
-    <!-- swiper -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="logo" href="#topo" aria-label="Kaiky Matsumoto — ir para o início">
+        <span class="logo__mark" aria-hidden="true">K</span>
+        <span class="logo__text">Kaiky Matsumoto</span>
+      </a>
+      <p class="footer__meta">© <span id="current-year">2026</span> Kaiky Matsumoto. Todos os direitos reservados.</p>
+      <div class="social-links">
+        <a class="icon-btn" href="https://github.com/koekoki" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Kaiky Matsumoto (abre em nova aba)"><i class="icon-github" aria-hidden="true"></i></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/kaiky-matsumoto/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kaiky Matsumoto (abre em nova aba)"><i class="icon-linkedin" aria-hidden="true"></i></a>
+        <a class="icon-btn" href="mailto:kaiky.matsumoto@gmail.com" aria-label="Enviar e-mail para Kaiky Matsumoto"><i class="icon-envelope" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
 
-    <!-- scrollreveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+  <a href="#topo" class="icon-btn back-to-top" aria-label="Voltar ao topo"><i class="icon-arrow-up-outline" aria-hidden="true"></i></a>
 
-    <!-- main.js -->
-    <script src="main.js"></script>
+  <!-- Shared dialog populated by assets/js/modules/render-projects.js -->
+  <dialog id="project-dialog" class="project-dialog" aria-labelledby="project-dialog-title">
+    <div class="project-dialog__inner">
+      <button class="icon-btn project-dialog__close" type="button" data-dialog-close aria-label="Fechar detalhes do projeto">
+        <i class="icon-x" aria-hidden="true"></i>
+      </button>
+      <p class="eyebrow" id="project-dialog-period"></p>
+      <h3 id="project-dialog-title"></h3>
+      <p class="project-card__summary" id="project-dialog-summary"></p>
 
+      <div class="project-dialog__section">
+        <h4>Minha participação</h4>
+        <p id="project-dialog-role"></p>
+      </div>
+
+      <div class="project-dialog__section">
+        <h4>Destaques técnicos</h4>
+        <ul id="project-dialog-highlights"></ul>
+      </div>
+
+      <div class="project-dialog__section">
+        <h4>Stack</h4>
+        <div class="badge-group" id="project-dialog-stack"></div>
+      </div>
+
+      <div class="project-dialog__actions" id="project-dialog-links"></div>
+    </div>
+  </dialog>
+
+  <script type="module" src="assets/js/main.js"></script>
 </body>
-
 </html>

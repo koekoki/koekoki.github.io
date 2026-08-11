@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Design tokens — colors, type scale, spacing, radii, shadows, motion.
+   Light theme is the default; dark theme follows system preference and
+   can be overridden explicitly via [data-theme] (set by assets/js/modules/theme.js).
+   ========================================================================== */
+
+:root {
+  --hue-accent: 235;
+
+  /* ---- Light theme (default) ---- */
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f6f7fb;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f6f7fb;
+  --color-border: #e3e6ee;
+  --color-border-strong: #cbd0dd;
+
+  --color-text: #12141c;
+  --color-text-muted: #4b5266;
+  --color-text-faint: #636b80;
+
+  --color-accent: #4f46e5;
+  --color-accent-strong: #4338ca;
+  --color-accent-soft: #eeedfd;
+  --color-accent-contrast: #ffffff;
+
+  --color-focus-ring: #4f46e5;
+
+  --color-success: #15803d;
+  --color-danger: #b91c1c;
+
+  --shadow-color: 220 30% 15%;
+  --shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.06), 0 1px 1px hsl(var(--shadow-color) / 0.04);
+  --shadow-md: 0 12px 24px -8px hsl(var(--shadow-color) / 0.14), 0 2px 6px hsl(var(--shadow-color) / 0.06);
+  --shadow-lg: 0 24px 48px -12px hsl(var(--shadow-color) / 0.22);
+
+  /* ---- Type scale ---- */
+  --font-heading: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
+  --fs-2xl: clamp(1.875rem, 1.5rem + 1.6vw, 2.5rem);
+  --fs-3xl: clamp(2.25rem, 1.7rem + 2.5vw, 3.375rem);
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 5.5rem;
+  --space-16: 8rem;
+
+  /* ---- Layout ---- */
+  --container-max: 74rem;
+  --container-pad: var(--space-5);
+  --header-height: 4.5rem;
+
+  /* ---- Radii ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 999px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 450ms;
+}
+
+/* ---- Dark theme: system preference ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0b0d14;
+    --color-bg-subtle: #11141d;
+    --color-surface: #151926;
+    --color-surface-hover: #1b2030;
+    --color-border: #262c3d;
+    --color-border-strong: #343c53;
+
+    --color-text: #f2f3f7;
+    --color-text-muted: #a8afc2;
+    --color-text-faint: #7b8299;
+
+    --color-accent: #8b85f3;
+    --color-accent-strong: #a5a0f6;
+    --color-accent-soft: rgba(139, 133, 243, 0.14);
+    --color-accent-contrast: #0b0d14;
+
+    --color-focus-ring: #a5a0f6;
+
+    --color-success: #4ade80;
+    --color-danger: #f87171;
+
+    --shadow-color: 230 60% 3%;
+    --shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.4);
+    --shadow-md: 0 16px 32px -12px hsl(var(--shadow-color) / 0.55);
+    --shadow-lg: 0 28px 56px -16px hsl(var(--shadow-color) / 0.65);
+  }
+}
+
+/* ---- Dark theme: explicit override (wins over system preference) ---- */
+:root[data-theme="dark"] {
+  --color-bg: #0b0d14;
+  --color-bg-subtle: #11141d;
+  --color-surface: #151926;
+  --color-surface-hover: #1b2030;
+  --color-border: #262c3d;
+  --color-border-strong: #343c53;
+
+  --color-text: #f2f3f7;
+  --color-text-muted: #a8afc2;
+  --color-text-faint: #7b8299;
+
+  --color-accent: #8b85f3;
+  --color-accent-strong: #a5a0f6;
+  --color-accent-soft: rgba(139, 133, 243, 0.14);
+  --color-accent-contrast: #0b0d14;
+
+  --color-focus-ring: #a5a0f6;
+
+  --color-success: #4ade80;
+  --color-danger: #f87171;
+
+  --shadow-color: 230 60% 3%;
+  --shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.4);
+  --shadow-md: 0 16px 32px -12px hsl(var(--shadow-color) / 0.55);
+  --shadow-lg: 0 28px 56px -16px hsl(var(--shadow-color) / 0.65);
+}
+
+/* ---- Light theme: explicit override (wins over system preference) ---- */
+:root[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f6f7fb;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f6f7fb;
+  --color-border: #e3e6ee;
+  --color-border-strong: #cbd0dd;
+
+  --color-text: #12141c;
+  --color-text-muted: #4b5266;
+  --color-text-faint: #636b80;
+
+  --color-accent: #4f46e5;
+  --color-accent-strong: #4338ca;
+  --color-accent-soft: #eeedfd;
+  --color-accent-contrast: #ffffff;
+
+  --color-focus-ring: #4f46e5;
+
+  --color-success: #15803d;
+  --color-danger: #b91c1c;
+
+  --shadow-color: 220 30% 15%;
+  --shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.06), 0 1px 1px hsl(var(--shadow-color) / 0.04);
+  --shadow-md: 0 12px 24px -8px hsl(var(--shadow-color) / 0.14), 0 2px 6px hsl(var(--shadow-color) / 0.06);
+  --shadow-lg: 0 24px 48px -12px hsl(var(--shadow-color) / 0.22);
+}
